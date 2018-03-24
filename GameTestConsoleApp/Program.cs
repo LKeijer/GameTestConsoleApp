@@ -59,8 +59,6 @@ namespace GameTestConsoleApp
             //        }
             //    }
             //}
-
-            //Console.ReadKey();
             #endregion
 
 

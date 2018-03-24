@@ -22,27 +22,24 @@ namespace GameTestConsoleApp
             Console.WriteLine("------------Press 1 to create a character------------");
 
             //Logic for determining which key has been pressed
-            do
+            var keyPress = Console.ReadKey(true); //true sets it to hide the key input
+            
+            if (keyPress.Key == ConsoleKey.D1)
             {
-                var key = ckiStruct.Key.ToString();
-                if (key == "1")
-                {
-                    Console.WriteLine("Please enter your name:");
-                    Console.ReadLine();
-                }
-                else
-                {
-                    Console.WriteLine(key);
-                }
+                Console.WriteLine("Please enter your name:");
+                Console.ReadLine(); //Return user input to set as character name <-----TODO
             }
-            while (ckiStruct != null);
+            else
+            {
+                Console.WriteLine("Press 1 for character creation");
+            }
 
 
 
-                //MSDN
+            //MSDN
             do
             {
-                ckiStruct = Console.ReadKey();
+                ckiStruct = Console.ReadKey(true);
 
                 if ((ckiStruct.Modifiers & ConsoleModifiers.Alt) != 0) Console.Write("ALT+");
                 if ((ckiStruct.Modifiers & ConsoleModifiers.Shift) != 0) Console.Write("SHIFT+");
